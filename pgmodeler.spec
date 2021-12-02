@@ -1,6 +1,6 @@
 # ReviewRequest: https://bugzilla.redhat.com/show_bug.cgi?id=977116
 
-global prever beta1
+%global prever beta1
 
 %global _privatelibs lib(objrenderer|parsers|pgconnector|pgmodeler|pgmodeler_ui|utils)\\.so
 %global __provides_exclude (%{_privatelibs})
@@ -8,7 +8,7 @@ global prever beta1
 
 Name:             pgmodeler
 Version:          0.9.4
-Release:          6%{?prever:.%{prever}}%{?GITrev:.git.%{GITrev}}%{?dist}
+Release:          %{name}-v%{version}{?prever:-%{prever}}
 Summary:          PostgreSQL Database Modeler
 
 License:          GPLv3
