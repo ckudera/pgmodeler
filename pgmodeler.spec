@@ -8,7 +8,7 @@
 
 Name:             pgmodeler
 Version:          0.9.4
-Release:          %{name}-v%{version}{?prever:-%{prever}}
+Release:          6%{?prever:.%{prever}}%{?GITrev:.git.%{GITrev}}%{?dist}
 Summary:          PostgreSQL Database Modeler
 
 License:          GPLv3
