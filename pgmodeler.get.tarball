@@ -1,7 +1,7 @@
 #!/bin/bash
 
 APP=pgmodeler
-VER=v0.9.4-beta1
+VER=v0.9.3
 
 rm -rf $APP-$VER
 git clone --branch $VER --depth 1 https://github.com/pgmodeler/pgmodeler.git $APP-$VER
