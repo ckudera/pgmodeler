@@ -1,10 +1,10 @@
 #!/bin/bash
 
 APP=pgmodeler
-VER=0.8.2_beta
+VER=v0.9.4-beta1
 
 rm -rf $APP-$VER
-git clone -b 0.8.2-beta --depth 1 https://github.com/pgmodeler/pgmodeler.git $APP-$VER
+git clone --branch $VER --depth 1 https://github.com/pgmodeler/pgmodeler.git $APP-$VER
 GHASH=$( git --git-dir ./$APP-$VER/.git reflog | cut -d' ' -f1 )
 rm -rf $APP-$VER/.git
 TARF=$APP-${VER}.git.$GHASH.tar.xz

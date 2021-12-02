@@ -1,14 +1,13 @@
 # ReviewRequest: https://bugzilla.redhat.com/show_bug.cgi?id=977116
 
-#global GITrev 8d1e180
-#global prever alpha1
+#global prever beta1
 
 %global _privatelibs lib(objrenderer|parsers|pgconnector|pgmodeler|pgmodeler_ui|utils)\\.so
 %global __provides_exclude (%{_privatelibs})
 %global __requires_exclude (%{_privatelibs})
 
 Name:             pgmodeler
-Version:          0.9.2
+Version:          0.9.4
 Release:          6%{?prever:.%{prever}}%{?GITrev:.git.%{GITrev}}%{?dist}
 Summary:          PostgreSQL Database Modeler
 
@@ -16,7 +15,7 @@ License:          GPLv3
 URL:              http://pgmodeler.io/
 # Script to generate main source0 for git based builds
 Source1:          %{name}.get.tarball
-Source0:          https://github.com/%{name}/%{name}/archive/v%{version}%{?prever:-%{prever}}.tar.gz#/%{name}-%{version}%{?prever:_%{prever}}%{?GITrev:.git.%{GITrev}}.tar.gz
+Source0:          https://github.com/%{name}/%{name}/archive/refs/tags/v%{version}%{?prever:-%{prever}}.tar.gz
 Source2:          %{name}.desktop
 Source3:          pgmodeler-mime-dbm.xml
 # On old EPEL there no package-config file in postgres packages https://github.com/pgmodeler/pgmodeler/issues/43
